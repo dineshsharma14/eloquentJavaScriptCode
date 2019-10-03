@@ -1147,7 +1147,7 @@ console.log(SCRIPTS.reduce((a, b) => {
 // it is mandatory to pass fx as argument when using reduce method 
 // in the inner fx its mandatory to define total and currentValue!
 
-// few more examples of application of reduce method!
+// few more examples of application of reduce method!!
 
 let someNumbers = [15.5, 2.3, 1.1, 4.7];
 console.log("Sum of nos. in someNumbers array: " + 
@@ -1174,19 +1174,3 @@ console.log(Math.round(average(
 console.log(Math.round(average(
     SCRIPTS.filter(s => !s.living).map(s => s.year)
 )));
-
-// Code for finding the script when a random text is provided!
-// Let's break the problem and think if we are passed the Unicode under usage!
-
-function characterScript(code) {
-    for (let script of SCRIPTS){
-        if (script.ranges.some(([from, to]) => {
-            return code >= from && code < to;
-        })){
-            return script;
-        }
-    }
-    return null;
-}
-
-console.log(characterScript(34768));
